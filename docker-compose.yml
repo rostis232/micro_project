@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  broker-service:
+    build:
+      context: ./../brocker-service
+      dockerfile: ./../brocker-service/broker-service_v2.dockerfile
+    restart: always
+    ports:
+      - "8091:80"
+    deploy:
+      mode: replicated
+      replicas: 1
